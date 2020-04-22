@@ -1,8 +1,10 @@
-import * as firebase from 'firebase-admin';
+import * as admin from 'firebase-admin';
 
-firebase.initializeApp({
-    credential: firebase.credential.applicationDefault(),
+admin.initializeApp({
+    credential: admin.credential.applicationDefault(),
     databaseURL: "https://mealworm-api.firebaseio.com",
 });
 
-export const firestore = firebase.firestore();
+export const firestore = admin.firestore();
+
+export const functions = admin.functions;

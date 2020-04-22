@@ -25,4 +25,3 @@ app.get("*", (req, res) => res.status(404).send("There is no content at this rou
 app.listen(port, () => console.log(`Server is listening on port ${port}.`));
 
 export default app;
-
