@@ -7,7 +7,6 @@ export const findAll = async (req, res) => {
 
 export const find = async (req, res) => {
     const recipe = await Recipe.find(req.params.id);
-    console.log(recipe);
     res.status(200).send({ recipe });
 }
 

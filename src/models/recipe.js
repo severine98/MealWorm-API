@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { firestore } from '../config/firebaseConfig';
+import { firestore } from '../config/firebase';
 
 export default class Recipe {
     constructor(data) {
