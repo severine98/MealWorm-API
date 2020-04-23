@@ -1,7 +1,8 @@
 import * as admin from 'firebase-admin';
+import serviceAccount from '../../.env.firebase.json';
 
 admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
+    credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://mealworm-api.firebaseio.com",
 });
 

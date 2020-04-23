@@ -1,3 +1,7 @@
+import home from "../docs/home.swagger";
+import recipes from "../docs/recipes.swagger";
+import schemas from "../docs/schemas.swagger";
+
 export const swaggerDocument = {
     openapi: '3.0.1',
     info: {
@@ -21,8 +25,30 @@ export const swaggerDocument = {
             description: 'Production'
         },
         {
-            url: 'http://localhost:3000/api',
+            url: 'http://localhost:3000',
             description: 'Local server'
         }
-    ]
+    ],
+    tags: [
+        {
+            name: "Home"
+        },
+        { 
+            name: "Recipes" 
+        }
+    ],
+    paths: {
+        "/api": home,
+        "/api/recipes": {
+            get: recipes.findAll,
+            post: recipes.create
+        },
+        "/api/recipes/:id": {
+            get: recipes.find,
+            delete: recipes.destroy
+        }
+    },
+    components: {
+        schemas: schemas
+    }
 }

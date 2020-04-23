@@ -16,13 +16,8 @@ export default class Recipe {
     }
 
     static async findAll() {
-        try {
-            const response = await firestore.collection("recipes").get();
-            console.log(response);
-            return response.map(doc => doc.data());
-        } catch(err) {
-            console.error(err);
-        }
+        const response = await firestore.collection("recipes").get();
+        return response.docs.map(doc => doc.data());
     }
 
     static async find(id) {
