@@ -4,13 +4,15 @@
   "private": true,
   "scripts": {
     "start": "npm-run-all build serve",
-    "serve": "node ./functions/index",
+    "serve": "node ./dist/index",
     "watch": "nodemon",
     "clean": "rimraf functions",
-    "transpile": "babel ./src --out-dir functions --copy-files --ignore 'node_modules'",
+    "transpile": "babel ./src --out-dir dist",
     "posttranspile": "cp functions.package.json functions/package.json && cd functions && npm install",
     "build": "npm-run-all clean transpile",
-    "test": "jest"
+    "test": "jest",
+    "functions:clean": "rimraf functions",
+    "functions:transpile": "babel ./src --out-dir functions --copy-files --ignore 'node_modules'",
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
