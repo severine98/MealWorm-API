@@ -6,7 +6,7 @@ This is a Node.js server application built using ES6 and Express.js. It is inten
 
 ## Getting it started
 
-To host the app locally and get developing, run the following commands: 
+To host the app locally and get developing, run the following commands:
 
 ```bash
 npm install
@@ -19,7 +19,7 @@ There is also a watch command using `nodemon` for automatic updates:
 npm run watch
 ```
 
-And the app can be built separately if required using the command: 
+And the app can be built separately if required using the command:
 
 ```bash
 npm run build
@@ -28,3 +28,7 @@ npm run build
 ## Documentation
 
 The app is documented using swagger to describe the endpoints. These docs can be found by going to the `/docs` endpoint.
+
+## Build info
+
+The project builds into two directories - `dist` for local development and testing, and `functions` for deployment using firebase functions. Scripts are defined separately to allow for this.
