@@ -6,13 +6,14 @@
     "start": "npm-run-all build serve",
     "serve": "node ./dist/index",
     "watch": "nodemon",
-    "clean": "rimraf functions",
+    "clean": "rimraf dist",
     "transpile": "babel ./src --out-dir dist",
-    "posttranspile": "cp functions.package.json functions/package.json && cd functions && npm install",
     "build": "npm-run-all clean transpile",
     "test": "jest",
     "functions:clean": "rimraf functions",
     "functions:transpile": "babel ./src --out-dir functions --copy-files --ignore 'node_modules'",
+    "postfunctions:transpile": "cp functions.package.json functions/package.json && cd functions && npm install",
+    "functions:build": "npm-run-all functions:clean functions:transpile"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
