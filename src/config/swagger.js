@@ -21,11 +21,11 @@ export const swaggerDocument = {
     },
     servers: [
         {
-            url: 'mealworm-api.web.app',
+            url: 'mealworm-api.web.app/',
             description: 'Production'
         },
         {
-            url: 'http://localhost:3000',
+            url: 'http://localhost:3000/',
             description: 'Local server'
         }
     ],
