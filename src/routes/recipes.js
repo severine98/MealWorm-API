@@ -11,4 +11,4 @@ router.post("/", recipes.create);
 
 router.delete("/:id", recipes.destroy);
 
-module.exports = router;
+export default router;

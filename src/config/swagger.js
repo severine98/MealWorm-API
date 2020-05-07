@@ -1,5 +1,6 @@
 import home from "../docs/home.swagger";
-import recipes from "../docs/recipes.swagger";
+import * as recipes from "../docs/recipes.swagger";
+import * as favourites from "../docs/favourites.swagger";
 import schemas from "../docs/schemas.swagger";
 
 export const swaggerDocument = {
@@ -21,7 +22,7 @@ export const swaggerDocument = {
     },
     servers: [
         {
-            url: 'mealworm-api.web.app/',
+            url: 'https://mealworm-api.web.app/',
             description: 'Production'
         },
         {
@@ -46,6 +47,9 @@ export const swaggerDocument = {
         "/api/recipes/:id": {
             get: recipes.find,
             delete: recipes.destroy
+        },
+        "/api/favourites/:userId": {
+            get: favourites.findAll
         }
     },
     components: {

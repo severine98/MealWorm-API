@@ -4,6 +4,7 @@ import { firestore } from '../config/firebase';
 export default class Recipe {
     constructor(data) {
         this.id = data.id || uuid();
+        this.userId = data.userId || "";
         this.name = data.name;
         this.category = data.category;
         this.area = data.area;
@@ -23,6 +24,14 @@ export default class Recipe {
     static async find(id) {
         const response = await firestore.collection("recipes").doc(id).get();
         return response.data();
+    }
+
+    static async findByUserId(userId) {
+        const response = await firestore
+            .collection("recipes")
+            .where("userId", "==", userId)
+            .get();
+        return response.docs.map(doc => doc.data());
     }
 
     async save() {

@@ -1,6 +1,6 @@
-const findAll = {
+export const findAll = {
     tags: ["Recipes"],
-    description: "GET all recipes - receive a list of the favourites",
+    description: "GET all recipes - receive a list of all the recipes",
     operationId: "findAll",
     responses: {
         "200": {
@@ -16,9 +16,9 @@ const findAll = {
     }
 }
 
-const create = {
+export const create = {
     tags: ["Recipes"],
-    description: "POST a recipe - add a recipe to the user's favourites",
+    description: "POST a recipe - add a recipe to the list of recipes",
     operationId: "create",
     responses: {
         "201": {
@@ -39,9 +39,9 @@ const create = {
     }
 }
 
-const find = {
+export const find = {
     tags: ["Recipes"],
-    description: "GET one recipe - receive a selected recipe from the user's favourites",
+    description: "GET one recipe - receive a selected recipe using it's id",
     operationId: "find",
     responses: {
         "200": {
@@ -57,9 +57,9 @@ const find = {
     }
 }
 
-const destroy = {
+export const destroy = {
     tags: ["Recipes"],
-    description: "DELETE one recipe - remove an item from the user's favourites",
+    description: "DELETE one recipe - remove an item from the recipes using its id",
     operationId: "destroy",
     responses: {
         "200": {
@@ -73,11 +73,4 @@ const destroy = {
             }
         }
     }
-}
-
-export default {
-    findAll,
-    create,
-    find,
-    destroy
 }
