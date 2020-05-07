@@ -12,6 +12,7 @@ var _firebase = require("../config/firebase");
 class Recipe {
   constructor(data) {
     this.id = data.id || (0, _uuid.v4)();
+    this.userId = data.userId || "";
     this.name = data.name;
     this.category = data.category;
     this.area = data.area;
@@ -31,6 +32,11 @@ class Recipe {
   static async find(id) {
     const response = await _firebase.firestore.collection("recipes").doc(id).get();
     return response.data();
+  }
+
+  static async findByUserId(userId) {
+    const response = await _firebase.firestore.collection("recipes").where("userId", "==", userId).get();
+    return response.docs.map(doc => doc.data());
   }
 
   async save() {

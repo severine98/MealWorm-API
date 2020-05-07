@@ -13,6 +13,11 @@ var _default = {
         description: 'Unique identifier',
         example: "422bf3e8-3a94-46be-8e49-2fd7c5db4bfc"
       },
+      userId: {
+        type: 'string',
+        description: 'Unique identifier for the user who has favourited the recipe',
+        example: "422bf3efd7c5db4bfc"
+      },
       name: {
         type: 'string',
         description: 'The title of the recipe',

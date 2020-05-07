@@ -12,6 +12,8 @@ var _swagger = require("./config/swagger");
 
 var _recipes = _interopRequireDefault(require("./routes/recipes"));
 
+var _favourites = _interopRequireDefault(require("./routes/favourites"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
@@ -26,6 +28,7 @@ app.use(_express.default.urlencoded({
   extended: false
 }));
 app.use('/api/recipes', _recipes.default);
+app.use('/api/favourites', _favourites.default);
 app.get('/api', (req, res) => res.send({
   message: "Welcome to the MealWorm API!"
 }));
